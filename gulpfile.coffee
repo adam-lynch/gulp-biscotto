@@ -13,6 +13,7 @@ gulp.task 'compile', (done) ->
 
 gulp.task 'test', ['compile'], ->
   gulp.src('./test/*.coffee')
+    .pipe($.plumber())
     .pipe($.coffee(
       bare: true
     ))
