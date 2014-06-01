@@ -29,8 +29,7 @@
     "gulp-mocha": "^0.4.1",
     "gulp-load-plugins": "^0.5.1",
     "gulp-clean": "^0.3.0",
-    "coffee-script": "^1.7.1",
-    "cult": "^1.4.0"
+    "coffee-script": "^1.7.1"
   },
   "dependencies": {
     "biscotto": "^2.1.2"
