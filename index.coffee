@@ -1,18 +1,20 @@
+require 'coffee-script/register'
+biscotto = require 'biscotto'
+File = require 'vinyl'
+path = require 'path'
 through = require 'through'
-PluginError = require('gulp-util').PluginError
-
-pluginName = 'gulp-biscotto'
 
 module.exports = ->
+  stream = through()
 
-  each = (file) ->
-    return if file.isNull() # ignore
-    if file.isStream()
-      return this.emit 'error', new PluginError(pluginName, 'Streaming not supported')
+  each = (filePath, contents) ->
+    stream.write new File
+      path: path.resolve(filePath)
+      contents: new Buffer contents
 
-    this.emit 'data', file
+  done = ->
+    stream.end()
 
-  end = ->
-    this.emit 'end'
+  biscotto.run done, each
 
-  return through each, end
+  return stream
