@@ -3,4 +3,4 @@ node_js:
   - 0.10
   - 0.11
 before_script: npm install -g coffee-script
-script: gulp test --require coffee-script/register
+script: coffee -c gulpfile.coffee && gulp test
