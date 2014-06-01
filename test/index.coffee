@@ -17,6 +17,6 @@ describe 'gulp-biscotto', ->
       path: 'a',
       base: 'a',
       cwd: 'a',
-      contents: fs.createReadStream './test/fixtures/module.coffee'
+      contents: fs.createReadStream './test/fixtures/coffee/module.coffee'
 
     stream.end()
