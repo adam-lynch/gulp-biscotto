@@ -13,18 +13,9 @@ gulp.task 'compile', (done) ->
 
 gulp.task 'test', ['compile'], ->
   gulp.src('./test/*.coffee')
-    .pipe($.plumber(
-      errorHandler: ->
-        throw new Error 'Test failure'
-        process.exit(1)
-    ))
     .pipe($.coffee(
       bare: true
     ))
     .pipe(gulp.dest('./test/'))
-    .pipe($.mocha
+    .pipe $.mocha
       reporter: 'spec'
-    )
-    .on 'error', ->
-      console.log 'errrrr'
-      process.exit 1
