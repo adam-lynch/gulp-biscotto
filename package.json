@@ -1,0 +1,38 @@
+{
+  "name": "gulp-biscotto",
+  "version": "0.0.0",
+  "description": "Gulp plugin to generate Biscotto documentation from CoffeeScripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "cult test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adam-lynch/gulp-biscotto.git"
+  },
+  "keywords": [
+    "biscotto",
+    "documentation",
+    "coffeescript",
+    "tomdoc",
+    "gulpplugin"
+  ],
+  "author": "Adam Lynch <contact@adamlynch.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adam-lynch/gulp-biscotto/issues"
+  },
+  "homepage": "https://github.com/adam-lynch/gulp-biscotto",
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-coffee": "^1.4.3",
+    "gulp-mocha": "^0.4.1",
+    "gulp-load-plugins": "^0.5.1",
+    "gulp-clean": "^0.3.0",
+    "coffee-script": "^1.7.1",
+    "cult": "^1.4.0"
+  },
+  "dependencies": {
+    "biscotto": "^2.1.2"
+  }
+}
