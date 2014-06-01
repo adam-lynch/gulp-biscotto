@@ -28,7 +28,7 @@ node_modules
 .idea
 *.iml
 
-test
+test/index.js
 
 # Ignored by GIT, not by npm
 index.js
