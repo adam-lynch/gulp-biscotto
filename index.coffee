@@ -6,13 +6,24 @@ through = require 'through'
 
 module.exports = ->
   stream = through()
+  console.log process.cwd()
 
   each = (filePath, contents) ->
     stream.write new File
       path: path.resolve(filePath)
       contents: new Buffer contents
 
-  done = ->
+  done = (err) ->
+    return stream.emit 'error', err if err
+
+    stream.write new File
+      path: path.resolve 'assets/biscotto.css'
+      contents: new Buffer biscotto.style()
+
+    stream.write new File
+      path: path.resolve 'assets/biscotto.js'
+      contents: new Buffer biscotto.script()
+
     stream.end()
 
   biscotto.run done, each

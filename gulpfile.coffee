@@ -22,25 +22,34 @@ gulp.task 'test', ['compile'], ->
     .pipe($.coffee(
       bare: true
     ))
-    .pipe(gulp.dest('./test/'))
+    .pipe(gulp.dest('./test'))
     .pipe($.mocha
       reporter: 'spec'
     )
 
-###
+
 gulp.task 'a', ->
   files = []
-  gulp.src('./test/simple/doc/**')
+  gulp.src('./test/fixtures/simple/out/**/**')
     .pipe es.through ((file) ->
       if file.contents
         files.push
-          path: file.relative
+          basename: file.relative.replace('\\', '/')
           contents: file.contents.toString('utf8')
     ), ->
-      fs.writeFileSync './test/simple/output-files.json', JSON.stringify files###
+      fs.writeFileSync './test/fixtures/simple/output-files.json', JSON.stringify files
 
 
 gulp.task 'b', ['compile'], ->
   biscotto = require './'
+  process.chdir('./test/fixtures/simple')
+  files = []
   biscotto()
-    .pipe $.debug()
+    .pipe gulp.dest('./out')
+    .pipe es.through ((file) ->
+      if file.contents
+        files.push
+          basename: file.path.replace('\\', '/')
+          contents: file.contents.toString('utf8')
+    ), ->
+      fs.writeFileSync 'output-files.json', JSON.stringify files
