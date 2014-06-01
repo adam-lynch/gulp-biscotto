@@ -21,4 +21,5 @@ gulp.task 'test', ['compile'], ->
       reporter: 'spec'
     )
     .on 'error', ->
+      console.log 'errrrr'
       process.exit 1
