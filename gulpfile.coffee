@@ -20,3 +20,5 @@ gulp.task 'test', ['compile'], ->
     .pipe($.mocha
       reporter: 'spec'
     )
+    .on 'error', ->
+      process.exit 1
