@@ -1,56 +1,37 @@
 gulpBiscotto = require '../'
 chai = require 'chai'
 expect = chai.expect
-File = require 'vinyl'
 fs = require 'fs'
 path = require 'path'
+File = require 'vinyl'
 globToVinyl = require 'glob-to-vinyl'
 
 describe 'gulp-biscotto', ->
 
-  beforeEach (ready) =>
-    @fixtures =
-      coffee: {}
-      html: {}
-
-    globToVinyl './test/fixtures/coffee/*.coffee', (err, files) =>
+  before (ready) =>
+    @fixtures = {}
+    globToVinyl './test/fixtures/**/**.json', (err, files) =>
       files.forEach (file) =>
-        basename = path.basename file.path, path.extname(file.path)
-        @fixtures.coffee[basename] = file
-
+        @fixtures[file.relative.replace('\\', '/')] = JSON.parse file.contents.toString() if file.contents
       ready()
 
-  it 'should throw an error if a stream is passed', (done)->
-    stream = gulpBiscotto()
+  it 'should provide all output files', (done) =>
+    expectedFiles = @fixtures['simple/output-files.json']
 
-    stream.on 'error', (err) ->
-      expect(err.plugin).to.equal('gulp-biscotto')
-      expect(err.message).to.equal('Streaming not supported')
-      done() # if error isn't thrown, done isn't called and will throw timeout error
-
-    stream.write new File
-      path: 'a',
-      base: 'a',
-      cwd: 'a',
-      contents: fs.createReadStream './test/fixtures/coffee/module.coffee'
-
-    stream.end()
-
-  it 'should output the correct HTML', (done) =>
-    stream = gulpBiscotto()
+    stream = gulpBiscotto(
+      cwd: './test/fixtures/simple'
+    )
     numberOfFiles = 0
 
-    stream.on 'error', (err) ->
-      expect(err.plugin).to.equal('gulp-biscotto')
-      expect(err.message).to.equal('Streaming not supported')
-      done() # if error isn't thrown, done isn't called and will throw timeout error
-
     stream.on 'data', (file) ->
+      basename = path.basename file.path
+      throw new Error 'Unexpected file: ' + basename unless expectedFiles[basename]?
+
+      expect(file.contents.toString('utf8')).to.equal expectedFiles[basename].contents
       numberOfFiles++
 
     stream.on 'end', ->
-      expect(numberOfFiles).to.equal(1)
+      expect(numberOfFiles).to.equal expectedFiles.length
       done()
 
-    stream.write @fixtures.coffee.module
     stream.end()
