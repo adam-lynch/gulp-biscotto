@@ -1,4 +1,4 @@
-gulp-biscotto (Not ready yet!) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+gulp-biscotto [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 =============
 
 A [Gulp](https://github.com/gulpjs/gulp) plugin to generate [Biscotto](https://github.com/atom/biscotto) documentation from CoffeeScripts.
