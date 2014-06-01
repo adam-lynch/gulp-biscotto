@@ -31,7 +31,8 @@
     "coffee-script": "^1.7.1",
     "chai": "^1.9.1",
     "vinyl": "^0.2.3",
-    "gulp-plumber": "^0.6.2"
+    "gulp-plumber": "^0.6.2",
+    "glob-to-vinyl": "0.0.1"
   },
   "dependencies": {
     "biscotto": "^2.1.2",
