@@ -39,6 +39,6 @@ describe 'gulp-biscotto', ->
       for receivedFile, index in receivedFiles
         expectedFile = expectedFiles[index]
 
-        expect(receivedFile.relative).to.equal expectedFile.relative
+        expect(receivedFile.relative.replace('\\', '/')).to.equal expectedFile.relative.replace('\\', '/')
         expect(receivedFile.contents).not.to.equal ''
       done()
