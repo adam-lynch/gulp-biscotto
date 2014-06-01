@@ -12,11 +12,11 @@ gulp.task 'compile', (done) ->
     .on 'finish', done
 
 gulp.task 'test', ['compile'], ->
-  gulp.src('./test.coffee')
+  gulp.src('./test/*.coffee')
     .pipe($.coffee(
       bare: true
     ))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./test/'))
     .pipe($.mocha
       reporter: 'spec'
     )
