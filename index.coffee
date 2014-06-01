@@ -6,7 +6,6 @@ through = require 'through'
 
 module.exports = ->
   stream = through()
-  console.log process.cwd()
 
   each = (filePath, contents) ->
     stream.write new File
