@@ -4,7 +4,7 @@
   "description": "Gulp plugin to generate Biscotto documentation from CoffeeScripts",
   "main": "index.js",
   "scripts": {
-    "test": "cult test"
+    "test": "gulp test --require coffee-script/register"
   },
   "repository": {
     "type": "git",
