@@ -13,7 +13,11 @@ gulp.task 'compile', (done) ->
 
 gulp.task 'test', ['compile'], ->
   gulp.src('./test/*.coffee')
-    .pipe($.plumber())
+    .pipe($.plumber(
+      errorHandler: ->
+        throw new Error 'Test failure'
+        process.exit(1)
+    ))
     .pipe($.coffee(
       bare: true
     ))
