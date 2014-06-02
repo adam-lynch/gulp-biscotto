@@ -1,7 +1,7 @@
 {
   "name": "gulp-biscotto",
-  "version": "0.0.2",
-  "description": "Gulp plugin to generate Biscotto documentation from CoffeeScripts",
+  "version": "0.0.3",
+  "description": "A Gulp-friendly module to generate [Biscotto](https://github.com/atom/biscotto) documentation from CoffeeScripts and return the output files.",
   "main": "index.js",
   "scripts": {
     "test": "gulp test --require coffee-script/register"
@@ -15,7 +15,7 @@
     "documentation",
     "coffeescript",
     "tomdoc",
-    "gulpplugin"
+    "gulpfriendly"
   ],
   "author": "Adam Lynch <contact@adamlynch.com>",
   "license": "MIT",

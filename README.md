@@ -1,14 +1,14 @@
 gulp-biscotto [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 =============
 
-A [Gulp](https://github.com/gulpjs/gulp) plugin to generate [Biscotto](https://github.com/atom/biscotto) documentation from CoffeeScripts and return the output files.
+A [Gulp](https://github.com/gulpjs/gulp)-friendly module to generate [Biscotto](https://github.com/atom/biscotto) documentation from CoffeeScripts and return the output files.
 
 ## Installation
 
 `npm install gulp-biscotto`
 
 ## Usage
-This isn't a typical Gulp plugin. gulp-biscotto is to be used in place of `gulp.src`. It will "source" the output files Biscotto would've generated and then you can do whatever you'd like with them.
+This isn't like a typical Gulp plugin. gulp-biscotto is to be used in place of `gulp.src`. It will "source" the output files Biscotto would've generated and then you can do whatever you'd like with them.
 
 ```javascript
 var gulp = require('gulp');
