@@ -11,6 +11,7 @@ gulp.task 'compile', (done) ->
     ))
     .pipe(gulp.dest('./'))
     .on 'finish', done
+  return
 
 gulp.task 'test', ['compile'], ->
   gulp.src('./test/*.coffee')
@@ -25,3 +26,4 @@ gulp.task 'test', ['compile'], ->
     .pipe($.mocha
       reporter: 'spec'
     )
+  return

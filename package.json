@@ -33,7 +33,7 @@
     "glob-to-vinyl": "0.0.1"
   },
   "dependencies": {
-    "biscotto": "^2.1.4",
+    "biscotto": "~2.2.0",
     "through": "^2.3.4",
     "coffee-script": "^1.7.1",
     "vinyl": "^0.2.3"
