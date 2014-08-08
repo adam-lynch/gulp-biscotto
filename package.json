@@ -1,6 +1,6 @@
 {
   "name": "gulp-biscotto",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A Gulp-friendly module to generate [Biscotto](https://github.com/atom/biscotto) documentation from CoffeeScripts and return the output files.",
   "main": "index.js",
   "scripts": {
