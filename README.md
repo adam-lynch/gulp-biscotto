@@ -21,10 +21,10 @@ biscotto()
 There are *no options*. [See Biscotto's `.biscottoopts` file](https://github.com/atom/biscotto#project-defaults) (Note: when using a `.biscottoopts` file, it must be in the same directory as your `gulpfile.js`).
 
 [npm-url]: https://npmjs.org/package/gulp-biscotto
-[npm-image]: https://badge.fury.io/js/gulp-biscotto.png
+[npm-image]: http://img.shields.io/npm/v/gulp-biscotto.svg?style=flat
 
 [travis-url]: http://travis-ci.org/adam-lynch/gulp-biscotto
 [travis-image]: http://img.shields.io/travis/adam-lynch/gulp-biscotto.svg?style=flat
 
 [depstat-url]: https://david-dm.org/adam-lynch/gulp-biscotto
-[depstat-image]: https://david-dm.org/adam-lynch/gulp-biscotto.png
+[depstat-image]: https://david-dm.org/adam-lynch/gulp-biscotto.svg?style=flat
