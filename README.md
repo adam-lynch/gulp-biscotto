@@ -1,5 +1,9 @@
-gulp-biscotto [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
-=============
+gulp-biscotto 
+==========
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Windows Build Status][appveyor-image]][appveyor-url] [![Dependency Status][depstat-image]][depstat-url] 
+
+---
 
 A [Gulp](https://github.com/gulpjs/gulp)-friendly module to generate [Biscotto](https://github.com/atom/biscotto) documentation from CoffeeScripts and return the output files.
 
@@ -25,6 +29,9 @@ There are *no options*. [See Biscotto's `.biscottoopts` file](https://github.com
 
 [travis-url]: http://travis-ci.org/adam-lynch/gulp-biscotto
 [travis-image]: http://img.shields.io/travis/adam-lynch/gulp-biscotto.svg?style=flat
+
+[appveyor-url]: https://ci.appveyor.com/project/adam-lynch/gulp-biscotto/branch/master
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/9rie54vp2kjj4biq/branch/master?svg=true
 
 [depstat-url]: https://david-dm.org/adam-lynch/gulp-biscotto
 [depstat-image]: https://david-dm.org/adam-lynch/gulp-biscotto.svg?style=flat
